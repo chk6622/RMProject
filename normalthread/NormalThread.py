@@ -12,7 +12,7 @@ from Queue import Queue
 import threading
 
 
-queueLock = threading.Lock()
+ser1Lock = threading.Lock()
 
 class NormalThread(threading.Thread):
     taskQueue=None
@@ -36,12 +36,12 @@ class NormalThread(threading.Thread):
             return
         while True:
             try:
-                queueLock.acquire()
+                ser1Lock.acquire()
                 if self.taskQueue.empty():
-                    queueLock.release()
+                    ser1Lock.release()
                     break
                 result=self.taskQueue.get(block=True)
-                queueLock.release()
+                ser1Lock.release()
                 
                 self.printTool.printStartMessage('%s processes result' %threading.Thread.getName(self))
                 self.printTool.printStartMessage('%s gets pdf url' %threading.Thread.getName(self))
@@ -74,7 +74,7 @@ class NormalThread(threading.Thread):
                 appLogger.error(err)
             finally:
                 try:
-                    queueLock.release()
+                    ser1Lock.release()
                 except Exception, err:
                     pass
         appLogger.info('Thread %s end' % self.getName())

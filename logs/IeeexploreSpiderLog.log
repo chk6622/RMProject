@@ -25936,3 +25936,392 @@ InsertResultIntoMongoDBProcessor                  :current spending time   0.190
 2018-09-03 14:32:04,148;INFO;NormalExecuter.<module>;Line:76;Message:----------------------------1--------------------------------
 2018-09-03 14:32:04,148;INFO;PrintTool.printStartMessage;Line:38;Message:Beginning: processes result:...
 2018-09-03 14:32:04,148;INFO;PrintTool.printStartMessage;Line:38;Message:Beginning: gets pdf url...
+2018-09-03 15:45:19,714;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 1
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:45:20,075;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:45:40,075;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:45:41,236;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:45:42,237;ERROR;BaseProcessor.run;Line:52;Message:'TestWebPageSpider' object has no attribute 'generateTempFilePath'
+2018-09-03 15:45:42,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileTempPath'
+2018-09-03 15:45:42,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileId'
+2018-09-03 15:45:43,240;ERROR;BaseProcessor.run;Line:52;Message:'TestWebPageSpider' object has no attribute 'generateTempFilePath'
+2018-09-03 15:45:43,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileTempPath'
+2018-09-03 15:45:43,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileId'
+2018-09-03 15:45:43,242;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:45:19,total spending time:23.51 s,processing total data:2,avg processing speed:0.09 /s,the spending time processing single data :1.995 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.160s；min spending time   0.000s；avg spending time   0.580s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.992s；max spending time   0.992s；min spending time   0.000s；avg spending time   0.496s
+GetRealPdfUrlProcessor                            :current spending time   1.002s；max spending time   1.002s；min spending time   1.001s；avg spending time   1.002s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.001s；max spending time   0.001s；min spending time   0.001s；avg spending time   0.001s
+
+2018-09-03 15:45:45,240;ERROR;BaseProcessor.run;Line:52;Message:'TestWebPageSpider' object has no attribute 'generateTempFilePath'
+2018-09-03 15:45:45,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileTempPath'
+2018-09-03 15:45:45,242;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileId'
+2018-09-03 15:45:46,240;ERROR;BaseProcessor.run;Line:52;Message:'TestWebPageSpider' object has no attribute 'generateTempFilePath'
+2018-09-03 15:45:46,240;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileTempPath'
+2018-09-03 15:45:46,242;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileId'
+2018-09-03 15:45:46,243;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:45:19,total spending time:26.52 s,processing total data:4,avg processing speed:0.15 /s,the spending time processing single data :4.973 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.160s；min spending time   0.000s；avg spending time   0.290s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   3.971s；max spending time   3.971s；min spending time   0.000s；avg spending time   1.736s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   2.000s；min spending time   1.001s；avg spending time   1.251s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+
+2018-09-03 15:45:47,240;ERROR;BaseProcessor.run;Line:52;Message:'TestWebPageSpider' object has no attribute 'generateTempFilePath'
+2018-09-03 15:45:47,243;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileTempPath'
+2018-09-03 15:45:47,243;ERROR;BaseProcessor.run;Line:52;Message:'StreamBox' object has no attribute 'fileId'
+2018-09-03 15:45:47,269;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 15:45:19,total spending time:27.52 s,processing total data:5,avg processing speed:0.18 /s,the spending time processing single data :5.964 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.160s；min spending time   0.000s；avg spending time   0.232s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   4.960s；max spending time   4.960s；min spending time   0.000s；avg spending time   2.381s
+GetRealPdfUrlProcessor                            :current spending time   1.000s；max spending time   2.000s；min spending time   1.000s；avg spending time   1.201s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time   0.002s；max spending time   0.002s；min spending time   0.000s；avg spending time   0.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+
+2018-09-03 15:45:47,269;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 15:45:47,269;INFO;ProcessScheduler.execute;Line:101;Message:the app stop
+2018-09-03 15:47:41,565;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 1
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:47:41,911;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:48:01,914;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:48:03,086;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:48:15,153;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:47:41,total spending time:33.58 s,processing total data:2,avg processing speed:0.06 /s,the spending time processing single data :12.043 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   1.980s；max spending time   1.980s；min spending time   0.990s；avg spending time   1.485s
+GetRealPdfUrlProcessor                            :current spending time   2.001s；max spending time   2.001s；min spending time   1.000s；avg spending time   1.500s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time   6.001s；max spending time   6.001s；min spending time   5.001s；avg spending time   5.501s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.838s；max spending time   2.020s；min spending time   1.838s；avg spending time   1.929s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.222s；max spending time   0.231s；min spending time   0.222s；avg spending time   0.227s
+
+2018-09-03 15:48:20,621;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:47:41,total spending time:39.05 s,processing total data:4,avg processing speed:0.10 /s,the spending time processing single data :18.705 s
+IeeeDataProducer                                  :current spending time   1.172s；max spending time   1.172s；min spending time   0.000s；avg spending time   0.293s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   4.960s；min spending time   0.000s；avg spending time   1.982s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   2.001s；min spending time   1.000s；avg spending time   1.251s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  11.001s；max spending time  11.001s；min spending time   5.001s；avg spending time   7.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   5.319s；max spending time   5.319s；min spending time   1.838s；avg spending time   3.563s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.211s；max spending time   0.231s；min spending time   0.193s；avg spending time   0.214s
+
+2018-09-03 15:48:24,875;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 15:47:41,total spending time:43.27 s,processing total data:5,avg processing speed:0.12 /s,the spending time processing single data :21.726 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.172s；min spending time   0.000s；avg spending time   0.234s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   3.970s；max spending time   4.960s；min spending time   0.000s；avg spending time   2.380s
+GetRealPdfUrlProcessor                            :current spending time   1.000s；max spending time   2.001s；min spending time   1.000s；avg spending time   1.201s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  15.001s；max spending time  15.001s；min spending time   5.001s；avg spending time   8.601s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.552s；max spending time   5.319s；min spending time   1.552s；avg spending time   3.161s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.202s；max spending time   0.231s；min spending time   0.193s；avg spending time   0.212s
+
+2018-09-03 15:48:24,875;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 15:48:24,875;INFO;ProcessScheduler.execute;Line:101;Message:the app stop
+2018-09-03 15:52:43,938;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 10
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:52:44,289;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:53:04,290;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:53:07,828;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:53:23,776;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:52:43,total spending time:39.83 s,processing total data:2,avg processing speed:0.05 /s,the spending time processing single data :15.927 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   2.001s；min spending time   1.001s；avg spending time   1.501s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  12.001s；max spending time  12.001s；min spending time   6.001s；avg spending time   9.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   2.734s；max spending time   2.734s；min spending time   1.650s；avg spending time   2.192s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.191s；max spending time   0.193s；min spending time   0.191s；avg spending time   0.192s
+
+2018-09-03 15:53:30,132;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:52:43,total spending time:46.19 s,processing total data:4,avg processing speed:0.09 /s,the spending time processing single data :22.293 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   3.537s；min spending time   0.000s；avg spending time   0.884s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   2.002s；max spending time   2.002s；min spending time   1.001s；avg spending time   1.751s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  10.000s；max spending time  15.001s；min spending time   6.001s；avg spending time  10.751s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time  10.095s；max spending time  10.095s；min spending time   1.650s；avg spending time   4.119s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.196s；max spending time   0.196s；min spending time   0.191s；avg spending time   0.194s
+
+2018-09-03 15:53:30,799;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 15:52:43,total spending time:46.83 s,processing total data:5,avg processing speed:0.11 /s,the spending time processing single data :22.902 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   3.537s；min spending time   0.000s；avg spending time   0.707s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   2.002s；max spending time   2.002s；min spending time   1.001s；avg spending time   1.801s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  15.001s；max spending time  15.001s；min spending time   6.001s；avg spending time  11.601s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   1.957s；max spending time   1.957s；min spending time   0.000s；avg spending time   0.391s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   3.744s；max spending time  10.095s；min spending time   1.650s；avg spending time   4.044s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.198s；max spending time   0.198s；min spending time   0.191s；avg spending time   0.195s
+
+2018-09-03 15:53:30,799;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 15:53:30,799;INFO;ProcessScheduler.execute;Line:101;Message:the app stop
+2018-09-03 15:56:08,798;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 10
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:56:09,124;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:56:29,127;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:56:30,772;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:56:30,773;ERROR;TestWebPageSpider.getRealPdfUrl;Line:122;Message:not enough arguments for format string
+2018-09-03 15:56:30,783;ERROR;TestWebPageSpider.getRealPdfUrl;Line:122;Message:not enough arguments for format string
+2018-09-03 15:56:30,793;ERROR;TestWebPageSpider.getRealPdfUrl;Line:122;Message:not enough arguments for format string
+2018-09-03 15:56:30,802;ERROR;TestWebPageSpider.getRealPdfUrl;Line:122;Message:not enough arguments for format string
+2018-09-03 15:56:30,813;ERROR;TestWebPageSpider.getRealPdfUrl;Line:122;Message:not enough arguments for format string
+2018-09-03 15:57:02,078;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 10
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:57:02,421;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:57:22,423;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:57:23,145;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:57:35,398;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:57:02,total spending time:33.31 s,processing total data:2,avg processing speed:0.06 /s,the spending time processing single data :12.219 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   1.001s；min spending time   1.001s；avg spending time   1.001s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time   9.001s；max spending time   9.001s；min spending time   6.001s；avg spending time   7.501s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.969s；max spending time   1.969s；min spending time   1.715s；avg spending time   1.842s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.247s；max spending time   0.247s；min spending time   0.201s；avg spending time   0.224s
+
+2018-09-03 15:57:44,032;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:57:02,total spending time:41.95 s,processing total data:4,avg processing speed:0.10 /s,the spending time processing single data :20.842 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.723s；min spending time   0.000s；avg spending time   0.181s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   2.001s；min spending time   1.001s；avg spending time   1.251s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  11.001s；max spending time  11.001s；min spending time   6.001s；avg spending time   9.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   8.643s；max spending time   8.643s；min spending time   1.715s；avg spending time   3.818s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.197s；max spending time   0.247s；min spending time   0.197s；avg spending time   0.216s
+
+2018-09-03 15:57:45,529;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 15:57:02,total spending time:43.42 s,processing total data:5,avg processing speed:0.12 /s,the spending time processing single data :22.333 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.723s；min spending time   0.000s；avg spending time   0.145s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   2.001s；max spending time   2.001s；min spending time   1.001s；avg spending time   1.401s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  19.001s；max spending time  19.001s；min spending time   6.001s；avg spending time  11.001s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.128s；max spending time   8.643s；min spending time   1.128s；avg spending time   3.280s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.203s；max spending time   0.247s；min spending time   0.197s；avg spending time   0.213s
+
+2018-09-03 15:57:45,529;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 15:57:45,529;INFO;ProcessScheduler.execute;Line:101;Message:the app stop
+2018-09-03 15:58:32,904;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 10
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 15:58:33,260;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 15:58:53,263;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 15:58:54,444;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 15:59:15,749;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:58:32,total spending time:42.84 s,processing total data:2,avg processing speed:0.05 /s,the spending time processing single data :22.485 s
+IeeeDataProducer                                  :current spending time   1.181s；max spending time   1.181s；min spending time   0.000s；avg spending time   0.590s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.000s；max spending time   1.062s；min spending time   1.000s；avg spending time   1.031s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  19.001s；max spending time  19.001s；min spending time  12.734s；avg spending time  15.868s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.073s；max spending time   2.285s；min spending time   1.073s；avg spending time   1.679s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.229s；max spending time   0.229s；min spending time   0.203s；avg spending time   0.216s
+
+2018-09-03 15:59:19,913;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 15:58:32,total spending time:47.00 s,processing total data:4,avg processing speed:0.09 /s,the spending time processing single data :25.457 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.181s；min spending time   0.000s；avg spending time   0.295s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.021s；max spending time   1.062s；min spending time   1.000s；avg spending time   1.031s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  13.651s；max spending time  19.846s；min spending time  12.734s；avg spending time  16.308s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.166s；min spending time   0.000s；avg spending time   0.042s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time  10.590s；max spending time  10.590s；min spending time   1.073s；avg spending time   4.214s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.001s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.001s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.194s；max spending time   0.229s；min spending time   0.191s；avg spending time   0.204s
+
+2018-09-03 15:59:21,055;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 15:58:32,total spending time:48.12 s,processing total data:5,avg processing speed:0.10 /s,the spending time processing single data :26.541 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   1.181s；min spending time   0.000s；avg spending time   0.236s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   2.165s；max spending time   2.165s；min spending time   1.000s；avg spending time   1.258s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  23.096s；max spending time  23.096s；min spending time  12.734s；avg spending time  17.666s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.166s；min spending time   0.000s；avg spending time   0.033s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.079s；max spending time  10.590s；min spending time   1.073s；avg spending time   3.587s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.001s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.201s；max spending time   0.229s；min spending time   0.191s；avg spending time   0.204s
+
+2018-09-03 15:59:21,055;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 15:59:21,056;INFO;ProcessScheduler.execute;Line:101;Message:the app stop
+2018-09-03 16:00:40,368;INFO;ProcessScheduler.execute;Line:72;Message:starts  3 process(including main process)
+process stage 1 starts 1 process:
+every bizprocessor thread in the process is the following：
+           bizprocessor.IeeeDataProducer.                        IeeeDataProducer * 1
+process stage 2 starts 1 process:
+every bizprocessor thread in the process is the following：
+         bizprocessor.GetPdfUrlProcessor.                      GetPdfUrlProcessor * 1
+     bizprocessor.GetRealPdfUrlProcessor.                  GetRealPdfUrlProcessor * 10
+        bizprocessor.GetPdfFileProcessor.                     GetPdfFileProcessor * 10
+bizprocessor.InsertPdfFileIntoMongoDBProcessor.       InsertPdfFileIntoMongoDBProcessor * 2
+bizprocessor.InsertResultIntoMongoDBProcessor.        InsertResultIntoMongoDBProcessor * 1
+
+2018-09-03 16:00:40,697;INFO;IeeeDataProducer.run;Line:68;Message:init queue...
+2018-09-03 16:01:00,698;INFO;ApiSpider.queryData;Line:69;Message:key word: swarm ; query begin year: 2016 ; query end year: 2017 ; content_type: Journals ; open access: True
+2018-09-03 16:01:01,575;INFO;IeeeDataProducer.getResultData;Line:61;Message:key word: swarm results number is 5
+2018-09-03 16:01:18,417;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 16:00:40,total spending time:38.04 s,processing total data:2,avg processing speed:0.05 /s,the spending time processing single data :16.807 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.062s；max spending time   1.062s；min spending time   1.040s；avg spending time   1.051s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  14.333s；max spending time  14.333s；min spending time   8.401s；avg spending time  11.367s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   1.156s；max spending time   1.962s；min spending time   1.156s；avg spending time   1.559s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.256s；max spending time   0.256s；min spending time   0.208s；avg spending time   0.232s
+
+2018-09-03 16:01:25,032;INFO;ProcessScheduler.execute;Line:88;Message:
+start time:2018-09-03 16:00:40,total spending time:44.66 s,processing total data:4,avg processing speed:0.09 /s,the spending time processing single data :24.334 s
+IeeeDataProducer                                  :current spending time   0.877s；max spending time   0.877s；min spending time   0.000s；avg spending time   0.219s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.002s；max spending time   0.002s；min spending time   0.000s；avg spending time   0.001s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   1.001s；max spending time   2.165s；min spending time   1.001s；avg spending time   1.317s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  14.000s；max spending time  14.587s；min spending time   8.401s；avg spending time  12.830s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   8.235s；max spending time   8.235s；min spending time   1.156s；avg spending time   3.459s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.219s；max spending time   0.256s；min spending time   0.205s；avg spending time   0.222s
+
+2018-09-03 16:01:25,678;INFO;ProcessScheduler.execute;Line:99;Message:
+start time:2018-09-03 16:00:40,total spending time:45.28 s,processing total data:5,avg processing speed:0.11 /s,the spending time processing single data :24.061 s
+IeeeDataProducer                                  :current spending time   0.000s；max spending time   0.877s；min spending time   0.000s；avg spending time   0.175s
+   IeeeDataProducer-GetPdfUrlProcessor            :current spending time   0.000s；max spending time   0.002s；min spending time   0.000s；avg spending time   0.000s
+GetPdfUrlProcessor                                :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+   GetPdfUrlProcessor-GetRealPdfUrlProcessor      :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetRealPdfUrlProcessor                            :current spending time   2.042s；max spending time   2.165s；min spending time   1.001s；avg spending time   1.462s
+   GetRealPdfUrlProcessor-GetPdfFileProcessor     :current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+GetPdfFileProcessor                               :current spending time  20.838s；max spending time  20.838s；min spending time   8.401s；avg spending time  14.432s
+   GetPdfFileProcessor-InsertPdfFileIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertPdfFileIntoMongoDBProcessor                 :current spending time   0.984s；max spending time   8.235s；min spending time   0.984s；avg spending time   2.964s
+   InsertPdfFileIntoMongoDBProcessor-InsertResultIntoMongoDBProcessor:current spending time   0.000s；max spending time   0.000s；min spending time   0.000s；avg spending time   0.000s
+InsertResultIntoMongoDBProcessor                  :current spending time   0.197s；max spending time   0.256s；min spending time   0.197s；avg spending time   0.217s
+
+2018-09-03 16:01:25,678;INFO;ProcessScheduler.execute;Line:100;Message:ProcessScheduler thread stop
+2018-09-03 16:01:25,678;INFO;ProcessScheduler.execute;Line:101;Message:the app stop

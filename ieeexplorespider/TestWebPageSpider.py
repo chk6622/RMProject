@@ -18,14 +18,16 @@ import threading
 import time
 import random
 
-queueLock = threading.Lock()
+ser1Lock = threading.Lock()
+ser2Lock = threading.Lock()
 
-class WebPageSpider(object):
+class TestWebPageSpider(object):
     
 #     MAIN_PAGE_URL=r'https://www.ieee.org/'
 #     COOKIE_PATH=r'../temp/cookie.txt'
 #     TEMP_DOC_PATH=r'../temp/'
-    CONNECT_COUNT=0
+    SER1_CUR_CONNECT_COUNT=0
+    SER2_CUR_CONNECT_COUNT=0
     
     def __init__(self,mainPageUrl=None,cookiePath=None,tempDocPath=None):
         if mainPageUrl:
@@ -35,22 +37,65 @@ class WebPageSpider(object):
         if tempDocPath:
             self.TEMP_DOC_PATH=tempDocPath
             
-    def getRandomDelayTime(self):
-        minDelay=1
-        maxDelay=3
-        if self.__class__.CONNECT_COUNT<=5:
-            minDelay=1 #normal delay
-            maxDelay=3
-        elif self.__class__.CONNECT_COUNT<=10:
-            minDelay=1*1.15 #-15% delay
-            maxDelay=3*1.15
-        elif self.__class__.CONNECT_COUNT<=15:
-            pass #-30% delay
-        elif self.__class__.CONNECT_COUNT<=20:
-            pass # -45% delay
-        else:
-            pass #-60%delay
-        return random.randrange(1,3,1)
+    def getSer1RandomDelayTime(self,minDelay=1,maxDelay=5,baseConnect=1):
+        '''
+        get random delay time
+        @param minDelay: min delay time
+        @param maxDelay: max delay time
+        @param baseConnect: base connect number
+        @return delay time: 
+        '''
+        ser1Lock.acquire() 
+        curConnectCount=self.__class__.SER1_CUR_CONNECT_COUNT
+        delayParam=(1+0.02)**((curConnectCount-baseConnect)/baseConnect)
+        if not delayParam:
+            delayParam=1
+        delay=random.randrange(minDelay,maxDelay)*delayParam
+        ser1Lock.release()
+        print 'current number is %d, delay is %f' % (curConnectCount,delay)
+        return delay
+    
+    def addWeb1ConnectCount(self):
+        ser1Lock.acquire()
+        self.__class__.SER1_CUR_CONNECT_COUNT+=1
+        ser1Lock.release()
+        
+    def minusWeb1ConnectCount(self):
+        ser1Lock.acquire()
+        self.__class__.SER1_CUR_CONNECT_COUNT-=1
+        if self.__class__.SER1_CUR_CONNECT_COUNT==0:
+            self.__class__.SER1_CUR_CONNECT_COUNT=0
+        ser1Lock.release()
+        
+    def getSer2RandomDelayTime(self,minDelay=1,maxDelay=5,baseConnect=1):
+        '''
+        get random delay time
+        @param minDelay: min delay time
+        @param maxDelay: max delay time
+        @param baseConnect: base connect number
+        @return delay time: 
+        '''
+        ser1Lock.acquire() 
+        curConnectCount=self.__class__.SER2_CUR_CONNECT_COUNT
+        delayParam=(1+0.05)**((curConnectCount-baseConnect)/baseConnect)
+        if not delayParam:
+            delayParam=1
+        delay=random.randrange(minDelay,maxDelay)*delayParam
+        ser1Lock.release()
+        print 'current number is %d, delay is %f' % (curConnectCount,delay)
+        return delay
+    
+    def addWeb2ConnectCount(self):
+        ser2Lock.acquire()
+        self.__class__.SER2_CUR_CONNECT_COUNT+=1
+        ser2Lock.release()
+        
+    def minusWeb2ConnectCount(self):
+        ser2Lock.acquire()
+        self.__class__.SER2_CUR_CONNECT_COUNT-=1
+        if self.__class__.SER2_CUR_CONNECT_COUNT==0:
+            self.__class__.SER2_CUR_CONNECT_COUNT=0
+        ser2Lock.release()
         
     def generateTempFilePath(self,fileName):
         '''
@@ -70,46 +115,13 @@ class WebPageSpider(object):
         @return: real pdf url
         '''
         sReturn=None
-        
+        self.addWeb1ConnectCount()
         try:
             if pdfUrl:               
-                #claim a MozillaCookieJar instance to save cookie
-                cookie = cookielib.MozillaCookieJar()
-                cookie.load(self.COOKIE_PATH, ignore_discard=True, ignore_expires=True)
-#                 httpHandler = urllib2.HTTPHandler()
-#                 httpsHandler = urllib2.HTTPSHandler()
-                cookieHandler=urllib2.HTTPCookieProcessor(cookie)
-                opener = urllib2.build_opener(cookieHandler)
-                urllib2.install_opener(opener)
-                #access pdfUrl
-#                 pt.printStartMessage('get real pdf url from the internet')
-                loop=0
-                while True:
-                    if loop==1:
-#                         appLogger.error('loop 1 times, but we still cannot get real pdf url')
-                        break
-                    loop+=1
-                    
-#                     queueLock.acquire()          
-                    requestHeaders=self.getRandomRequestHeaders()         
-                    request=urllib2.Request(pdfUrl,headers=requestHeaders)
-                    response = urllib2.urlopen(request)
-
-                    sleepTime=random.randrange(1,3,1)
-#                     print 'sleep %s s' % sleepTime
-                    time.sleep(sleepTime)
-                    queueLock.release()
-                    #save cookie               
-                    soup = BeautifulSoup(response,features='lxml')
-                    appLogger.info(pdfUrl)
-                    if soup.iframe:
-                        sReturn=soup.iframe.attrs.get('src')  #get real pdf url
-                        break
-                    else:
-                        print requestHeaders
-                        time.sleep(10)
+                time.sleep(self.getSer1RandomDelayTime(minDelay=1, maxDelay=3, baseConnect=1))
         except Exception, err:
             appLogger.error(err)
+        self.minusWeb1ConnectCount()
         return sReturn
 #            
     def getPdfFile(self,pdfRealUrl,filePath):
@@ -120,36 +132,22 @@ class WebPageSpider(object):
         @return: success return true, or return false  
         '''
         bReturn=False
-        f=None
+        self.addWeb2ConnectCount()
         try:
-            if pdfRealUrl:
-                response = requests.get(pdfRealUrl, stream=True)
-                f = open(filePath, "wb")
-                for chunk in response.iter_content(chunk_size=1024):
-                    if chunk:
-                        f.write(chunk)
-                appLogger.info('success get file from the internet. the file size is %s bytes' % os.path.getsize(filePath))
-                bReturn=True
-            else:
-#                 print 'sleep 10 second...'
-                sleepTime=random.randrange(5,20,1)
-                time.sleep(sleepTime)   #if we can not get real pdf url, thread will sleep 3000 ms in order to simulate the time to download the file 
+            time.sleep(self.getSer2RandomDelayTime(minDelay=5, maxDelay=20, baseConnect=1))
         except Exception, err:
             appLogger.error(err)
-        finally:
-            if f:
-                f.flush()
-                f.close()
-#             sleepTime=random.random*3
-            time.sleep(0.5)
+        self.addWeb2ConnectCount()
         return bReturn
 
 
 if __name__ == '__main__':
-    
+#     print 1.15**(15/5-1)
 #     print os.path.getsize('../temp/8359016.pdf')
-    spider=WebPageSpider()
-    print spider.getRandomRequestHeaders()
+    spider=TestWebPageSpider()
+    print spider.getRandomDelayTime()
+    
+    
 #     realUrl=spider.getRealPdfUrl(r'https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6931434')
 #     pdfUrl='https://ieeexplore.ieee.org/ielx5/74/5723204/05723276.pdf?tp=&arnumber=5723276&isnumber=5723204'
 #     print spider.getPdfFile(pdfUrl,'../temp/test.pdf')

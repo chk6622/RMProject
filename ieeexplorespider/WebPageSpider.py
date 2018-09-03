@@ -18,7 +18,7 @@ import threading
 import time
 import random
 
-queueLock = threading.Lock()
+ser1Lock = threading.Lock()
 
 class WebPageSpider(object):
     
@@ -98,7 +98,7 @@ class WebPageSpider(object):
                         break
                     loop+=1
                     
-#                     queueLock.acquire()          
+#                     ser1Lock.acquire()          
                     requestHeaders=self.getRandomRequestHeaders()         
                     request=urllib2.Request(pdfUrl,headers=requestHeaders)
                     response = urllib2.urlopen(request)
@@ -106,7 +106,7 @@ class WebPageSpider(object):
                     sleepTime=random.randrange(1,3,1)
 #                     print 'sleep %s s' % sleepTime
                     time.sleep(sleepTime)
-                    queueLock.release()
+#                     ser1Lock.release()
                     #save cookie               
                     soup = BeautifulSoup(response,features='lxml')
                     appLogger.info(pdfUrl)

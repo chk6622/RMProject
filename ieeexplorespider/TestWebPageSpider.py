@@ -137,7 +137,7 @@ class TestWebPageSpider(object):
             time.sleep(self.getSer2RandomDelayTime(minDelay=5, maxDelay=20, baseConnect=1))
         except Exception, err:
             appLogger.error(err)
-        self.addWeb2ConnectCount()
+        self.minusWeb2ConnectCount()
         return bReturn
 
 

@@ -16,14 +16,16 @@ class PrintTool(object):
     '''
     classdocs
     '''
-    timeMap={}
-    periodMap={}
+#     timeMap={}
+#     periodMap={}
 
 
     def __init__(self):
         '''
         Constructor
         '''
+        self.timeMap={}
+        self.periodMap={}
         
     def printStartMessage(self,message):
         ser1Lock.acquire()
@@ -80,6 +82,22 @@ class PrintTool(object):
         except Exception, err:
             appLogger.error(err)
         return dReturn
+    
+    def getTotalStatistics(self):
+        sReturn='The whole procedure:'
+        tempMap={}
+        for (k,v) in self.periodMap.items():
+            if ' - ' in k:
+                lastStr=k.split(' - ')[-1]
+                tempArray = tempMap.get(lastStr)
+                if not tempArray:
+                    tempArray=[]
+                    tempMap[lastStr]=tempArray
+                tempArray.append(self.getAvg(v))
+        for (k,v) in tempMap.items():
+            sReturn+=' %s : %d ;' % (k,self.getAvg(v))
+        appLogger.info(sReturn)
+        return sReturn
     
 #     def getMaxPeriod(self,message):
 #         maxPeriod=0
@@ -138,20 +156,20 @@ if __name__ == '__main__':
 #     l=[1,2,3,4,5,6]
 #     print l[-2:]
     pt=PrintTool()
-    pt.printStartMessage('abc')
+    pt.printStartMessage('a - abc')
     time.sleep( 1 )
-    pt.printStartMessage('abcd')
+    pt.printStartMessage('b - abcd')
     time.sleep( 2 )
-    pt.printEndMessage('abcd')
+    pt.printEndMessage('b - abcd')
     time.sleep( 1 )
-    pt.printEndMessage('abc')
-    pt.printStartMessage('abc')
+    pt.printEndMessage('a - abc')
+    pt.printStartMessage('c - abc')
     time.sleep( 3 )
-    pt.printStartMessage('abcd')
+    pt.printStartMessage('d - abcd')
     time.sleep( 1 )
-    pt.printEndMessage('abcd')
+    pt.printEndMessage('d - abcd')
     time.sleep( 1 )
-    pt.printEndMessage('abc')
+    pt.printEndMessage('c - abc')
     pt.printStartMessage('abc')
     time.sleep( 1 )
     pt.printStartMessage('abcd')
@@ -159,6 +177,8 @@ if __name__ == '__main__':
     pt.printEndMessage('abcd')
     time.sleep( 1 )
     pt.printEndMessage('abc')
+    
+    pt.getTotalStatistics()
         
         
         

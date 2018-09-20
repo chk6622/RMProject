@@ -24,10 +24,10 @@ if __name__ == '__main__':
     processQueueSize=50
     streamLineTemplate.append({'QueueSize':50,'pCount':1,'Thread':['bizprocessor.IeeeDataProducer','IeeeDataProducer',1]})
     streamLineTemplate.append({'QueueSize':50,'pCount':1,'Thread':[['bizprocessor.GetPdfUrlProcessor','GetPdfUrlProcessor',1]
-                                                                    ,['bizprocessor.GetRealPdfUrlProcessor','GetRealPdfUrlProcessor',10]
-                                                                    ,['bizprocessor.GetPdfFileProcessor','GetPdfFileProcessor',10]
-                                                                    ,['bizprocessor.InsertPdfFileIntoMongoDBProcessor','InsertPdfFileIntoMongoDBProcessor',2]
-                                                                    ,['bizprocessor.InsertResultIntoMongoDBProcessor','InsertResultIntoMongoDBProcessor',1]
+                                                                    ,['bizprocessor.GetRealPdfUrlProcessor','GetRealPdfUrlProcessor',20]
+                                                                    ,['bizprocessor.GetPdfFileProcessor','GetPdfFileProcessor',23]
+                                                                    ,['bizprocessor.InsertPdfFileIntoMongoDBProcessor','InsertPdfFileIntoMongoDBProcessor',23]
+                                                                    ,['bizprocessor.InsertResultIntoMongoDBProcessor','InsertResultIntoMongoDBProcessor',21]
                                                                    ]})
  
      

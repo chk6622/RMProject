@@ -25,8 +25,12 @@ class Statistics(object):
         
     def addProcessorLog(self,streamLogger):
         if streamLogger and isinstance(streamLogger, StreamLogger):
+            if not self.totalCount:
+                self.startTime=time.time()
             self.totalCount+=1  #sys processes total data adds 1
             self.totalPod=time.time()-self.startTime  #get sys runs total time
+            if not self.totalPod:
+                self.totalPod=1
             self.totalAvg=self.totalCount/self.totalPod  #get sys avg speed
             self.singlePod=streamLogger.getTotalPod()
 #             print self.singlePod

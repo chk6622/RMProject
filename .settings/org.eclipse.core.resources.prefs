@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//abs/ABS.py=utf-8
+encoding//abs/ABSIndividual.py=utf-8
+encoding//abs/ObjFunction.py=utf-8
 encoding//baseprocessor/BaseProcessor.py=utf-8
 encoding//baseprocessor/FirstProcessor.py=utf-8
 encoding//baseprocessor/LastProcessor.py=utf-8

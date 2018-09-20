@@ -66,7 +66,7 @@ class IeeeDataProducer(BaseProcessor):
     def run(self):
         self.outputQueue.put(object(),block=True)
         appLogger.info('init queue...')
-        time.sleep(20)
+#         time.sleep(20)
         while self.__class__.isServer:
             beginTime=time.time()
             processObj=self.process()
@@ -85,7 +85,7 @@ class IeeeDataProducer(BaseProcessor):
                     self.__class__.isServer=False
                 self.outputQueue.put(processObj,block=True)
                 
-                print 'producer put a box in the queue' 
+#                 print 'producer put a box in the queue' 
             time.sleep(0.01)
                 
 if __name__=='__main__':

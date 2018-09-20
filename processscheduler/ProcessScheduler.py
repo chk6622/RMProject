@@ -6,7 +6,7 @@ Created on Aug 30, 2018
 @author: xingtong
 '''
 import sys,os,time
-from multiprocessing.queues import SimpleQueue as Queue
+# from multiprocessing.queues import SimpleQueue as Queue
 from multiprocessing.queues import Queue
 from ProcessUnit import ProcessUnit
 from logger.Statistics import Statistics
@@ -34,6 +34,7 @@ class ProcessScheduler(object):
         if self.streamLineTemplate:
             for (index,processTemplate) in enumerate(self.streamLineTemplate):
                 outputQueue=Queue(maxsize=self.processQueueSize)
+#                 outputQueue=Queue()
                 pCount=processTemplate.get('pCount')  # get process number
                 if index==0:
                     for ind in xrange(pCount):
@@ -91,6 +92,8 @@ class ProcessScheduler(object):
                 if productCount==process_record:  #if product count equals processed product count then stop app
                     break
                 del(streamBox)
+            else:
+                time.sleep(0.01)
             
                 
         for process in processList:

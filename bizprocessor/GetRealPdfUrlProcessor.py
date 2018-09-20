@@ -6,14 +6,14 @@ Created on Aug 30, 2018
 @author: xingtong
 '''
 from baseprocessor.BaseProcessor import BaseProcessor
-from ieeexplorespider.TestWebPageSpider import TestWebPageSpider
+from ieeexplorespider.TestWebPageSpider import WebPageSpider
 from bizprocessor.GetPdfUrlProcessor import GetPdfUrlProcessor
 
 def getWebPageSipder(appConfig):
     mainPageUrl=appConfig.get('WebPageSpider','MAIN_PAGE_URL')
     cookiePath=appConfig.get('WebPageSpider','COOKIE_PATH')
     tempDocPath=appConfig.get('WebPageSpider','TEMP_DOC_PATH')
-    return TestWebPageSpider(mainPageUrl,cookiePath,tempDocPath)
+    return WebPageSpider(mainPageUrl,cookiePath,tempDocPath)
 
 class GetRealPdfUrlProcessor(BaseProcessor):
     '''

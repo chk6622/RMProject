@@ -7,7 +7,7 @@ Created on Aug 28, 2018
 '''
 
 from ieeexplorespider.ApiSpider import IeeeApiSpider
-from ieeexplorespider.WebPageSpider import WebPageSpider
+from ieeexplorespider.TestWebPageSpider import WebPageSpider
 from dao.MongoDBDAO import MongoDBDAO
 from utiles.PrintTool import PrintTool
 from ConfigParser import ConfigParser
@@ -118,9 +118,8 @@ if __name__ == '__main__':
             else:
                 break
         pt.printEndMessage('processes result set')
-    pt.printEndMessage('Ieee xplore spider')    
-
-        
+    pt.printEndMessage('Ieee xplore spider')
+    pt.getTotalStatistics()        
         
         
         

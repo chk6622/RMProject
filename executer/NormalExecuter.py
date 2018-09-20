@@ -6,7 +6,7 @@ Created on Aug 26, 2018
 @author: xingtong
 '''
 from ieeexplorespider.ApiSpider import IeeeApiSpider
-from ieeexplorespider.WebPageSpider import WebPageSpider
+from ieeexplorespider.TestWebPageSpider import WebPageSpider
 from dao.MongoDBDAO import MongoDBDAO
 from utiles.PrintTool import PrintTool
 from ConfigParser import ConfigParser

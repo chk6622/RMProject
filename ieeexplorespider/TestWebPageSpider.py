@@ -21,11 +21,8 @@ import random
 ser1Lock = threading.Lock()
 ser2Lock = threading.Lock()
 
-class TestWebPageSpider(object):
+class WebPageSpider(object):
     
-#     MAIN_PAGE_URL=r'https://www.ieee.org/'
-#     COOKIE_PATH=r'../temp/cookie.txt'
-#     TEMP_DOC_PATH=r'../temp/'
     SER1_CUR_CONNECT_COUNT=0
     SER2_CUR_CONNECT_COUNT=0
     
@@ -52,7 +49,7 @@ class TestWebPageSpider(object):
             delayParam=1
         delay=random.randrange(minDelay,maxDelay)*delayParam
         ser1Lock.release()
-        print 'current number is %d, delay is %f' % (curConnectCount,delay)
+#         print 'current number is %d, delay is %f' % (curConnectCount,delay)
         return delay
     
     def addWeb1ConnectCount(self):
@@ -82,7 +79,7 @@ class TestWebPageSpider(object):
             delayParam=1
         delay=random.randrange(minDelay,maxDelay)*delayParam
         ser1Lock.release()
-        print 'current number is %d, delay is %f' % (curConnectCount,delay)
+#         print 'current number is %d, delay is %f' % (curConnectCount,delay)
         return delay
     
     def addWeb2ConnectCount(self):
@@ -144,7 +141,7 @@ class TestWebPageSpider(object):
 if __name__ == '__main__':
 #     print 1.15**(15/5-1)
 #     print os.path.getsize('../temp/8359016.pdf')
-    spider=TestWebPageSpider()
+    spider=WebPageSpider()
     print spider.getRandomDelayTime()
     
     

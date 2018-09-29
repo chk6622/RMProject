@@ -60,7 +60,7 @@ class ABSIndividual:
 #         self.fitness = ObjFunction.GrieFunc(
 #             self.vardim, self.chrom, self.bound)
         
-        self.fitness = ObjFunction.PipelineFunc(self.vardim, self.chrom)
+        self.fitness = ObjFunction.getPipelineFuncFitness(self.vardim, self.chrom)
         
         
         

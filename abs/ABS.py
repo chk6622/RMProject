@@ -11,7 +11,7 @@ class ArtificialBeeSwarm:
     the class for artificial bee swarm algorithm
     '''
 
-    def __init__(self, sizepop, vardim, bound, MAXGEN, params):
+    def __init__(self, sizepop, vardim, bound, MAXGEN, params=[100,  0.5]):
         '''
         sizepop: population sizepop
         vardim: dimension of variables
@@ -47,7 +47,7 @@ class ArtificialBeeSwarm:
             self.fitness[i] = self.population[i].fitness
 #             print self.fitness[i]
 
-    def employedBeePhase_bak(self):
+    def employedBeePhase(self):
         '''
         employed bee phase
         '''
@@ -85,7 +85,7 @@ class ArtificialBeeSwarm:
             else:
                 self.population[i].trials += 1
                 
-    def employedBeePhase(self):
+    def employedBeePhase_bak(self):
         '''
         employed bee phase
         '''
@@ -123,7 +123,7 @@ class ArtificialBeeSwarm:
             else:
                 self.population[i].trials += 1
 
-    def onlookerBeePhase_bak(self):
+    def onlookerBeePhase(self):
         '''
         onlooker bee phase
         '''
@@ -165,7 +165,7 @@ class ArtificialBeeSwarm:
                         self.population[fi].trials += 1
                     break
                 
-    def onlookerBeePhase(self):
+    def onlookerBeePhase_bak(self):
         '''
         onlooker bee phase
         '''
@@ -259,16 +259,25 @@ class ArtificialBeeSwarm:
         x = np.arange(0, self.MAXGEN)
         y1 = self.trace[:, 0]
         y2 = self.trace[:, 1]
-        plt.plot(x, y1, 'r', label='optimal value')
-        plt.plot(x, y2, 'g', label='average value')
+#         plt.plot(x, y1, 'r', label='optimal value')
+        plt.plot(x, y2, 'g', label='pipeline function value')
         plt.xlabel("Iteration")
         plt.ylabel("function value")
-        plt.title("Artificial Bee Swarm algorithm for function optimization")
+        plt.title("Artificial Bee Swarm algorithm for the pipeline function optimization")
         plt.legend()
         plt.show()
         
         
 if __name__=='__main__':
-    bound = np.tile([[1], [100]], 100)
-    abs = ArtificialBeeSwarm(200, 4, bound, 500, [100,  0.5])
+    tb=100  #the top of bound
+    bb=1    #the bottom of bound
+    sizePop=100   #the number of bee
+    varDim=4  #the number of var
+    maxGen=70 #termination condition
+    bound = np.tile([[bb], [tb]], sizePop/2)
+    abs = ArtificialBeeSwarm(sizePop, varDim, bound, maxGen)
     abs.solve()
+    
+    
+    
+    

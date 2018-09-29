@@ -32,22 +32,25 @@ def RastFunc(vardim, x, bound):
         s = s + x[i - 1] ** 2 - 10 * math.cos(2 * math.pi * x[i - 1])
     return s
 
-def PipelineFunc(vardim, x):
-    sum=0
+def getPipelineFuncFitness(varDim, varValues):
+    '''
+    Get the pipeline function fitness
+    @param varDim: the number of variables
+    @param varValues: the value of every variables
+    @return: the pipeline function fitness
+    '''
     max=0
     timeArray=[]
     timeArray.append(getPdfUrlTime)
     timeArray.append(getPdfFileTime)
     timeArray.append(insertPdfFileTime)
     timeArray.append(insertArticleTime)
-    for i in range(1, vardim+1):
-        tmp1=timeArray[i-1](x[i-1])
-#         sum+=tmp1
-        tmp2=tmp1/x[i-1]
+    for i in range(1, varDim+1):
+        tmp1=timeArray[i-1](varValues[i-1])
+        tmp2=tmp1/varValues[i-1]
         if tmp2>max:
             max=tmp2
-    print 'x:%s = %d' % (x,max)
-    return max
+    return 1/max
 
 def getPdfUrlTime(nt):
     '''

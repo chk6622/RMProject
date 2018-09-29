@@ -8,6 +8,15 @@ Created on Aug 30, 2018
 from baseprocessor.BaseProcessor import BaseProcessor
 from ieeexplorespider.TestWebPageSpider import WebPageSpider
 from bizprocessor.GetPdfUrlProcessor import GetPdfUrlProcessor
+from ieeexplorespider.ApiSpider import IeeeApiSpider
+
+def getApiSpider(appConfig):
+    apiKey=appConfig.get('ApiSpider','API_KEY')
+    queryReturnMaxResult=appConfig.getint('ApiSpider','QUERY_RETURN_MAX_RESULTS')
+    maxQueryCountLimit=appConfig.getint('ApiSpider','MAX_QUERY_COUNT_LIMIT')
+    queryBeginYear=appConfig.get('ApiSpider','QUERY_BEGIN_YEAR')
+    queryEndYear=appConfig.get('ApiSpider','QUERY_END_YEAR')
+    return IeeeApiSpider(apiKey,queryReturnMaxResult,maxQueryCountLimit,queryBeginYear,queryEndYear)
 
 def getWebPageSipder(appConfig):
     mainPageUrl=appConfig.get('WebPageSpider','MAIN_PAGE_URL')
@@ -22,11 +31,13 @@ class GetRealPdfUrlProcessor(BaseProcessor):
 
     def __init__(self,inputQueue=None,outputQueue=None):
         super(GetRealPdfUrlProcessor,self).__init__(inputQueue=inputQueue,outputQueue=outputQueue)
+        self.apiSpider=getApiSpider(self.appConfig)
         self.webSpider=getWebPageSipder(self.appConfig)
             
     def process(self,processObj=None):
         if processObj:
-            realPdfUrl=self.webSpider.getRealPdfUrl(processObj.pdfUrl)
+            pdfUrl=self.apiSpider.getPdfUrl(processObj.result)
+            realPdfUrl=self.webSpider.getRealPdfUrl(pdfUrl)
 #             print realPdfUrl
             processObj.realPdfUrl=realPdfUrl
         return processObj

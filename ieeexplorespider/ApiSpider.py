@@ -43,7 +43,7 @@ class IeeeApiSpider(object):
         '''
         get query info
         '''
-        sReturn='key word: %s ; query begin year: %s ; query end year: %s ; content_type: Journals ; open access: True' % (keyWord,self.QUERY_BEGIN_YEAR,self.QUERY_END_YEAR)
+        sReturn='key word: %s ; query begin year: %s ; query end year: %s ; open access: True' % (keyWord,self.QUERY_BEGIN_YEAR,self.QUERY_END_YEAR)
         return sReturn
     
     def queryData(self, keyWords=''):
@@ -60,7 +60,7 @@ class IeeeApiSpider(object):
             query.maximumResults(self.QUERY_RETURN_MAX_RESULTS)
             query.queryText(keyWords)
             query.resultsSorting('publication_year','desc')
-            query.resultsFilter('content_type','Journals')  #only query journals
+#             query.resultsFilter('content_type','Journals')  #only query journals
             query.resultsFilter('open_access','True')  #only query the articles which is open access
             if self.QUERY_BEGIN_YEAR:
                 query.resultsFilter('start_year',self.QUERY_BEGIN_YEAR)
